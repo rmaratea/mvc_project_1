@@ -26,8 +26,7 @@ namespace MvcMovie.Controllers
 
             return View(data);
         }
-
-
+        
         // GET: Movies/Details/5
         public ActionResult Details(int? id)
         {
