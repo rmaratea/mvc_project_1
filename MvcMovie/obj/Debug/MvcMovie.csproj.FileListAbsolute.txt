@@ -105,6 +105,6 @@ C:\GitHub\mvc_project_1\MvcMovie\bin\Microsoft.Owin.Security.OAuth.xml
 C:\GitHub\mvc_project_1\MvcMovie\bin\Microsoft.Owin.Security.Google.xml
 C:\GitHub\mvc_project_1\MvcMovie\bin\Microsoft.Owin.Security.Twitter.xml
 C:\GitHub\mvc_project_1\MvcMovie\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\GitHub\mvc_project_1\MvcMovie\obj\Debug\MvcMovie.csprojResolveAssemblyReference.cache
 C:\GitHub\mvc_project_1\MvcMovie\obj\Debug\MvcMovie.dll
 C:\GitHub\mvc_project_1\MvcMovie\obj\Debug\MvcMovie.pdb
+C:\GitHub\mvc_project_1\MvcMovie\obj\Debug\MvcMovie.csprojResolveAssemblyReference.cache

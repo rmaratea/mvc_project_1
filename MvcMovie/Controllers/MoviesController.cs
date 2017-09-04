@@ -15,10 +15,18 @@ namespace MvcMovie.Controllers
         private MovieDbContext db = new MovieDbContext();
 
         // GET: Movies
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
-            return View(db.Movies.ToList());
+            List<Movie> data = null;
+
+            if (!string.IsNullOrWhiteSpace(id))
+                data = db.Movies.Where(c => c.Title.Contains(id)).ToList<Movie>();
+            else
+                data = db.Movies.ToList();
+
+            return View(data);
         }
+
 
         // GET: Movies/Details/5
         public ActionResult Details(int? id)

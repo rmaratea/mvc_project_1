@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 
@@ -22,5 +24,10 @@ namespace MvcMovie.Models
     public class MovieDbContext : DbContext
     {
         public DbSet<Movie> Movies { get; set; }
+
+        protected override DbEntityValidationResult ValidateEntity(DbEntityEntry entityEntry, IDictionary<object, object> items)
+        {
+            return base.ValidateEntity(entityEntry, items);
+        }
     }
 }
