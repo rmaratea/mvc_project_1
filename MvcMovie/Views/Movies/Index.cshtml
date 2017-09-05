@@ -16,12 +16,36 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-@*<form method="post" action="@Url.Action("Index", "id")">*@
-<p>
-    @Html.TextBox("searchString")
-    @Html.ActionLink("Search", "Index", "Movies", null, new { onclick = "this.href += '?searchString=' + document.getElementById('searchString').value;" })
-</p>
-@*</form>*@
+@using (Html.BeginForm("Index", "Movies", FormMethod.Get))
+{
+    <table class="table">
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.Title)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.ReleaseDate)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Genre)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @*NB: the name of this object must be the same as the name of the parameter of the "Index" action to retrieve the value *@
+                @Html.TextBox("SearchString")
+            </td>
+            <td>
+                @Html.TextBox("SearchYear")
+            </td>
+            <td>
+                @Html.TextBox("SearchGenre")
+            </td>
+        </tr>
+        <tr><td colspan="3"><input type="submit" value="Filter" /></td></tr>
+    </table>
+}
+
 
 <table class="table">
     <tr>

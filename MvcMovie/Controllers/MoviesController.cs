@@ -15,18 +15,17 @@ namespace MvcMovie.Controllers
         private MovieDbContext db = new MovieDbContext();
 
         // GET: Movies
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string searchString, string searchYear, string searchGenre)
         {
             List<Movie> data = null;
-
-            if (!string.IsNullOrWhiteSpace(searchString))
-                data = db.Movies.Where(c => c.Title.Contains(searchString)).ToList<Movie>();
-            else
-                data = db.Movies.ToList();
+            data = db.Movies
+                .Where(c => searchString == null || c.Title.Contains(searchString))
+                .Where(c => searchYear == null || c.ReleaseDate.Year.ToString().Contains(searchYear))
+                .Where(c => searchGenre == null || c.Genre.Contains(searchGenre))
+                .ToList<Movie>();
 
             return View(data);
         }
-
 
         // GET: Movies/Details/5
         public ActionResult Details(int? id)
@@ -122,6 +121,7 @@ namespace MvcMovie.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {
