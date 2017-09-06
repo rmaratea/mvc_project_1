@@ -15,13 +15,19 @@ namespace MvcMovie.Controllers
         private MovieDbContext db = new MovieDbContext();
 
         // GET: Movies
-        public ActionResult Index(string searchString, string searchYear, string searchGenre)
+        public ActionResult Index(string searchString, string searchYear, string movieGenre)
         {
+            //Populate the list to be displaied by a dropdownlist
+            //Note that the result must be a "SelectList"
+            //I can populate it here because the view is rendered later
+            ViewBag.movieGenre = new SelectList(db.Movies.Select(c => c.Genre).Distinct());
+
+            //Perform the research.
             List<Movie> data = null;
             data = db.Movies
                 .Where(c => searchString == null || c.Title.Contains(searchString))
                 .Where(c => searchYear == null || c.ReleaseDate.Year.ToString().Contains(searchYear))
-                .Where(c => searchGenre == null || c.Genre.Contains(searchGenre))
+                .Where(c => movieGenre == null || c.Genre.Contains(movieGenre))
                 .ToList<Movie>();
 
             return View(data);
