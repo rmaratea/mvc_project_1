@@ -108,3 +108,7 @@ C:\GitHub\mvc_project_1\MvcMovie\bin\Microsoft.Owin.Security.MicrosoftAccount.xm
 C:\GitHub\mvc_project_1\MvcMovie\obj\Debug\MvcMovie.dll
 C:\GitHub\mvc_project_1\MvcMovie\obj\Debug\MvcMovie.pdb
 C:\GitHub\mvc_project_1\MvcMovie\obj\Debug\MvcMovie.csprojResolveAssemblyReference.cache
+C:\GitHub\mvc_project_1\MvcMovie\obj\Debug\MvcMovie.Migrations.InitialCreate.resources
+C:\GitHub\mvc_project_1\MvcMovie\obj\Debug\MvcMovie.csproj.GenerateResource.Cache
+C:\GitHub\mvc_project_1\MvcMovie\obj\Debug\MvcMovie.Migrations.Initial.resources
+C:\GitHub\mvc_project_1\MvcMovie\obj\Debug\MvcMovie.Migrations.Rating.resources
